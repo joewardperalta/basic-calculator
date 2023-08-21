@@ -1,2 +1,2 @@
 # Basic-Calculator
-A web application calculate that can calculate basic arithmetic problems.
+A web application calculator that can calculate basic arithmetic problems.
