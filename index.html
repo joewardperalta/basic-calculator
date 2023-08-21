@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="index.css" />
-      <title>Basic Calculator</title>
-   </head>
-   <body>
-      <div id="calculator">
-         <div id="screen">0</div>
-         <ul id="touch-pad">
-            <button onclick="calculate(this)">+</button>
-            <button onclick="calculate(this)">-</button>
-            <button onclick="calculate(this)">x</button>
-            <button onclick="calculate(this)">Delete</button>
-            <button onclick="calculate(this)">1</button>
-            <button onclick="calculate(this)">2</button>
-            <button onclick="calculate(this)">3</button>
-            <button onclick="calculate(this)">÷</button>
-            <button onclick="calculate(this)">4</button>
-            <button onclick="calculate(this)">5</button>
-            <button onclick="calculate(this)">6</button>
-            <button onclick="calculate(this)">=</button>
-            <button onclick="calculate(this)">7</button>
-            <button onclick="calculate(this)">8</button>
-            <button onclick="calculate(this)">9</button>
-            <button onclick="calculate(this)">0</button>
-         </ul>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="screen">0</div>
+      <ul id="touch-pad">
+        <button onclick="calculate(this)">7</button>
+        <button onclick="calculate(this)">8</button>
+        <button onclick="calculate(this)">9</button>
+        <button class="operator-btn" onclick="calculate(this)">C</button>
+        <button class="operator-btn" onclick="calculate(this)">&larr;</button>
+        <button onclick="calculate(this)">4</button>
+        <button onclick="calculate(this)">5</button>
+        <button onclick="calculate(this)">6</button>
+        <button class="operator-btn" onclick="calculate(this)">&times;</button>
+        <button class="operator-btn" onclick="calculate(this)">&divide;</button>
+        <button onclick="calculate(this)">1</button>
+        <button onclick="calculate(this)">2</button>
+        <button onclick="calculate(this)">3</button>
+        <button class="operator-btn" onclick="calculate(this)">&minus;</button>
+        <button id="equal-operator-btn" onclick="calculate(this)">
+          &equals;
+        </button>
 
-      <script src="index.js"></script>
-   </body>
+        <button onclick="calculate(this)">&PlusMinus;</button>
+        <button onclick="calculate(this)">0</button>
+        <button>&sdot;</button>
+        <button class="operator-btn" onclick="calculate(this)">&plus;</button>
+      </ul>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
