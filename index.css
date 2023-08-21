@@ -2,12 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }
 
 body {
   background-color: rgb(255, 255, 255);
   height: 100vh;
-  font-size: 5rem;
 }
 
 ul {
@@ -50,6 +51,7 @@ button {
 
 #screen {
   height: 100px;
+  font-size: 5rem;
   display: flex;
   justify-content: right;
   align-items: center;

@@ -60,13 +60,11 @@ function calculate(element) {
       let expression = screen.innerHTML
         .replaceAll("x", "*")
         .replaceAll("÷", "/");
-
       try {
         screen.innerHTML = evaluate(expression);
       } catch (error) {
         screen.innerHTML = "Invalid Expression!";
       }
-
       break;
     case "Delete":
       if (screen.innerHTML == "Invalid Expression!") {
