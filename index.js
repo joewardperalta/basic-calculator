@@ -1,97 +1,118 @@
 "use strict";
 
+let numberElement = document.getElementById("number");
+let expressionElement = document.getElementById("expression");
 let result = 0;
-let screen = document.getElementById("screen");
 
-function calculate(element) {
-  switch (element.innerHTML) {
-    case "0":
-      if (screen.innerHTML != "0") screen.innerHTML += "0";
+function calculate(currentElement) {
+  switch (currentElement.id) {
+    case "zero-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "0";
       break;
-    case "1":
-      if (screen.innerHTML == "0") screen.innerHTML = "1";
-      else screen.innerHTML += "1";
+
+    case "one-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "1";
+      else numberElement.innerHTML = "1";
       break;
-    case "2":
-      if (screen.innerHTML == "0") screen.innerHTML = "2";
-      else screen.innerHTML += "2";
+
+    case "two-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "2";
+      else numberElement.innerHTML = "2";
       break;
-    case "3":
-      if (screen.innerHTML == "0") screen.innerHTML = "3";
-      else screen.innerHTML += "3";
+
+    case "three-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "3";
+      else numberElement.innerHTML = "3";
       break;
-    case "4":
-      if (screen.innerHTML == "0") screen.innerHTML = "4";
-      else screen.innerHTML += "4";
+
+    case "four-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "4";
+      else numberElement.innerHTML = "4";
       break;
-    case "5":
-      if (screen.innerHTML == "0") screen.innerHTML = "5";
-      else screen.innerHTML += "5";
+
+    case "five-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "5";
+      else numberElement.innerHTML = "5";
       break;
-    case "6":
-      if (screen.innerHTML == "0") screen.innerHTML = "6";
-      else screen.innerHTML += "6";
+
+    case "six-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "6";
+      else numberElement.innerHTML = "6";
       break;
-    case "7":
-      if (screen.innerHTML == "0") screen.innerHTML = "7";
-      else screen.innerHTML += "7";
+
+    case "seven-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "7";
+      else numberElement.innerHTML = "7";
       break;
-    case "8":
-      if (screen.innerHTML == "0") screen.innerHTML = "8";
-      else screen.innerHTML += "8";
+
+    case "eight-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "8";
+      else numberElement.innerHTML = "8";
       break;
-    case "9":
-      if (screen.innerHTML == "0") screen.innerHTML = "9";
-      else screen.innerHTML += "9";
+
+    case "nine-btn":
+      if (numberElement.innerHTML != "0") numberElement.innerHTML += "9";
+      else numberElement.innerHTML = "9";
       break;
-    case "+":
-      if (screen.innerHTML != "0") screen.innerHTML += "+";
+
+    case "plus-btn":
+      expressionElement.innerHTML =
+        numberElement.innerHTML + currentElement.innerHTML;
+      numberElement.innerHTML = "0";
       break;
-    case "-":
-      if (screen.innerHTML != "0") screen.innerHTML += "-";
+
+    case "minus-btn":
+      expressionElement.innerHTML =
+        numberElement.innerHTML + currentElement.innerHTML;
+      numberElement.innerHTML = "0";
       break;
-    case "x":
-      if (screen.innerHTML != "0") screen.innerHTML += "x";
+
+    case "times-btn":
+      expressionElement.innerHTML =
+        numberElement.innerHTML + currentElement.innerHTML;
+      numberElement.innerHTML = "0";
       break;
-    case "÷":
-      if (screen.innerHTML != "0") screen.innerHTML += "÷";
+
+    case "divide-btn":
+      expressionElement.innerHTML =
+        numberElement.innerHTML + currentElement.innerHTML;
+      numberElement.innerHTML = "0";
       break;
-    case "=":
-      let expression = screen.innerHTML
-        .replaceAll("x", "*")
-        .replaceAll("÷", "/");
+
+    case "equals-btn":
+      let expression = (expressionElement.innerHTML += numberElement.innerHTML);
+
+      expression = expression
+        .replaceAll("×", "*")
+        .replaceAll("÷", "/")
+        .replaceAll("−", "-");
+
       try {
-        screen.innerHTML = evaluate(expression);
+        let getResult = new Function("return " + expression);
+        numberElement.innerHTML = getResult();
       } catch (error) {
-        screen.innerHTML = "Invalid Expression!";
+        numberElement.innerHTML = "Invalid Expression!";
       }
+
+      expressionElement.innerHTML += " = ";
       break;
-    case "Delete":
-      if (screen.innerHTML == "Invalid Expression!") {
-        screen.innerHTML = "0";
-      } else {
-        if (screen.innerHTML.length > 1) {
-          screen.innerHTML = screen.innerHTML.substring(
-            0,
-            screen.innerHTML.length - 1
-          );
-        } else {
-          screen.innerHTML = "0";
-        }
-      }
+
+    case "plusminus-btn":
+      if (numberElement.innerHTML.indexOf("-") == -1)
+        numberElement.innerHTML = "-" + numberElement.innerHTML;
+      else numberElement.innerHTML = numberElement.innerHTML.replace("-", "");
       break;
+
+    case "delete-btn":
+      expressionElement.innerHTML = "";
+      break;
+
+    case "clear-btn":
+      expressionElement.innerHTML = "";
+      numberElement.innerHTML = "0";
+      break;
+
     default:
       console.log("Key entered not available!");
   }
-}
-
-/**
- * Evaluates the arithmetic expression.
- * @param {string} expression
- * @returns result of evaluating the expression
- */
-
-function evaluate(expression) {
-  let getResult = new Function("return " + expression);
-  return getResult();
 }

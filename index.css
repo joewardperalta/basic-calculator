@@ -26,22 +26,22 @@ button {
   background-color: rgb(240, 240, 240);
 }
 
-#equal-operator-btn {
+#equals-btn {
   background-color: rgb(14, 78, 205);
   color: white;
 }
 
 #calculator {
-  display: grid;
-  grid-template-rows: 0fr 1fr;
-  padding: 5px;
-  border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
-  width: 500px;
+  display: grid;
+  grid-template-rows: 0fr 1fr;
+  padding: 5px;
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
   background-color: rgb(230, 230, 230);
   border: 1px solid rgb(200, 200, 200);
 }
@@ -50,11 +50,13 @@ button {
 }
 
 #screen {
-  height: 100px;
   font-size: 5rem;
-  display: flex;
-  justify-content: right;
-  align-items: center;
+  text-align: end;
+}
+
+#expression {
+  font-size: 2rem;
+  height: 50px;
 }
 
 #touch-pad {

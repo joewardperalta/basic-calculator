@@ -14,34 +14,47 @@
   </head>
   <body>
     <div id="calculator">
-      <div id="screen">0</div>
+      <div id="screen">
+        <div id="expression"></div>
+        <div id="number">0</div>
+      </div>
       <ul id="touch-pad">
-        <button onclick="calculate(this)">7</button>
-        <button onclick="calculate(this)">8</button>
-        <button onclick="calculate(this)">9</button>
-        <button class="operator-btn" onclick="calculate(this)">C</button>
-        <button class="operator-btn" onclick="calculate(this)">&larr;</button>
-        <button onclick="calculate(this)">4</button>
-        <button onclick="calculate(this)">5</button>
-        <button onclick="calculate(this)">6</button>
-        <button class="operator-btn" onclick="calculate(this)">&times;</button>
-        <button class="operator-btn" onclick="calculate(this)">&divide;</button>
-        <button onclick="calculate(this)">1</button>
-        <button onclick="calculate(this)">2</button>
-        <button onclick="calculate(this)">3</button>
-        <button class="operator-btn" onclick="calculate(this)">&minus;</button>
-        <button
-          class="operator-btn"
-          id="equal-operator-btn"
-          onclick="calculate(this)"
-        >
+        <button id="seven-btn" onclick="calculate(this)">7</button>
+        <button id="eight-btn" onclick="calculate(this)">8</button>
+        <button id="nine-btn" onclick="calculate(this)">9</button>
+        <button class="operator-btn" id="clear-btn" onclick="calculate(this)">
+          C
+        </button>
+        <button class="operator-btn" id="delete-btn" onclick="calculate(this)">
+          &larr;
+        </button>
+        <button id="four-btn" onclick="calculate(this)">4</button>
+        <button id="five-btn" onclick="calculate(this)">5</button>
+        <button id="six-btn" onclick="calculate(this)">6</button>
+        <button class="operator-btn" id="times-btn" onclick="calculate(this)">
+          &times;
+        </button>
+        <button class="operator-btn" id="divide-btn" onclick="calculate(this)">
+          &divide;
+        </button>
+        <button id="one-btn" onclick="calculate(this)">1</button>
+        <button id="two-btn" onclick="calculate(this)">2</button>
+        <button id="three-btn" onclick="calculate(this)">3</button>
+        <button class="operator-btn" id="minus-btn" onclick="calculate(this)">
+          &minus;
+        </button>
+        <button class="operator-btn" id="equals-btn" onclick="calculate(this)">
           &equals;
         </button>
 
-        <button onclick="calculate(this)">&PlusMinus;</button>
-        <button onclick="calculate(this)">0</button>
+        <button id="plusminus-btn" onclick="calculate(this)">
+          &PlusMinus;
+        </button>
+        <button id="zero-btn" onclick="calculate(this)">0</button>
         <button>&sdot;</button>
-        <button class="operator-btn" onclick="calculate(this)">&plus;</button>
+        <button class="operator-btn" id="plus-btn" onclick="calculate(this)">
+          &plus;
+        </button>
       </ul>
     </div>
 
